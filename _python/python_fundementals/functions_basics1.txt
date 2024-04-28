@@ -1,0 +1,197 @@
+	Function		expected output			real output
+
+
+1-	def a():			5				5
+    		return 5
+		print(a())
+
+2-	def a():			10				10
+    		return 5
+		print(a()+a())
+
+3-	def a():			5 				5
+    		return 5
+    		return 10
+		print(a())
+4-	def a():			10 				5
+    		return 5
+    		print(10)
+	print(a())
+
+5-	def a():			5 then undefined		5 then None
+    		print(5)
+	x = a()
+	print(x)
+
+6-	def a(b,c):			3,5,undefined			3		
+									5
+		print(b+c)						Traceback (most recent call last):
+ 							 File "c:\Users\Yaser\Desktop\python testing\test.py", line 3, in <module>
+   	print(a(1,2) + a(2,3))						 print(a(1,2) + a(2,3))
+       							   ~~~~~~~^~~~~~~~
+							TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'		
+    							print(b+c)
+								print(a(1,2) + a(2,3))
+
+7-	def a(b,c):				25				25
+    		return str(b)+str(c)
+	print(a(2,5))
+
+8-	def a():				100,10				100,10
+    		b = 100
+    		print(b)
+    		if b < 10:
+        		return 5
+    		else:
+        		return 10
+    		return 7
+	print(a())
+
+9- 	def a(b,c):				7,14,21				7,14,21			
+    		if b<c:
+        		return 7
+    		else:
+        		return 14
+    		return 3
+	print(a(2,3))
+	print(a(5,3))
+	print(a(2,3) + a(5,3))
+
+10-	def a(b,c):				8					
+    		return b+c
+    		return 10
+	print(a(3,5))
+
+11- b = 500					500,500,300,500			500,500,300,500
+	print(b)
+	def a():
+    		b = 300
+    		print(b)
+	print(b)
+	a()
+	print(b)
+
+12- b = 500					500,500,300,500			500,500,300,500
+print(b)
+	def a():
+    		b = 300
+    		print(b)
+    		return b
+	print(b)
+	a()
+	print(b)
+
+13-b = 500					500,500,300,300			500,500,300,300
+print(b)
+def a():
+    b = 300
+    print(b)
+    return b
+print(b)
+b=a()
+print(b)
+
+14-def a():					1,3,2				1,3,2
+    print(1)
+    b()
+    print(2)
+def b():
+    print(3)
+a()
+
+15-def a():					1,3,5,10			1,3,5,10				
+   	print(1)
+  	x = b()
+    	print(x)
+    	return 10
+  def b():
+    	print(3)
+    	return 5
+   y = a()
+   print(y)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

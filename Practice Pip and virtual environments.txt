@@ -1,0 +1,100 @@
+1-pip list: 
+Running pip list in your terminal or command prompt will display a list of Python packages that are installed in your current Python environment. This command shows both the installed packages and their versions. It's a useful way to quickly check which packages are available in your Python environment and their respective versions.
+
+Output:
+Package      Version
+------------ -------
+blinker      1.7.0
+click        8.1.7
+colorama     0.4.6
+Flask        3.0.3
+itsdangerous 2.2.0
+Jinja2       3.1.3
+MarkupSafe   2.1.5
+pip          24.0
+Werkzeug     3.0.2
+
+2- deactivate:
+After running this command, you will return to the base (system) Python environment.
+After deactivation, you'll notice that the environment name (if previously displayed in the prompt) disappears.
+
+3-pip3 list:The results are the same as the command pip list
+
+While activated
+Output:
+Package      Version
+------------ -------
+blinker      1.7.0
+click        8.1.7
+colorama     0.4.6
+Flask        3.0.3
+itsdangerous 2.2.0
+Jinja2       3.1.3
+MarkupSafe   2.1.5
+pip          24.0
+Werkzeug     3.0.2
+
+While deactivated
+Output:
+Package Version
+------- -------
+pip     24.0
+
+4- source py3Env/scripts/activate: Activating a Python environment involves setting up the current terminal or command prompt session to use a specific Python interpreter and associated libraries that are isolated from the system-wide Python installation. This process modifies the environment variables (specifically PATH variable) to prioritize the paths related to the activated environment.
+
+Output:
+(py3Env)
+
+5-install django==2.2.4: This command will download and install the  version of Django 2.2.4 from the Python Package Index (PyPI) into your current Python environment. 
+
+Output:
+Collecting Django==2.2.4
+  Downloading Django-2.2.4-py3-none-any.whl.metadata (3.5 kB)
+Collecting pytz (from Django==2.2.4)
+  Downloading pytz-2024.1-py2.py3-none-any.whl.metadata (22 kB)
+Collecting sqlparse (from Django==2.2.4)
+  Downloading sqlparse-0.5.0-py3-none-any.whl.metadata (3.9 kB)
+Downloading Django-2.2.4-py3-none-any.whl (7.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.5/7.5 MB 5.4 MB/s eta 0:00:00
+Downloading pytz-2024.1-py2.py3-none-any.whl (505 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 505.5/505.5 kB 6.3 MB/s eta 0:00:00
+Downloading sqlparse-0.5.0-py3-none-any.whl (43 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.0/44.0 kB 1.1 MB/s eta 0:00:00
+Installing collected packages: pytz, sqlparse, Django
+Successfully installed Django-2.2.4 pytz-2024.1 sqlparse-0.5.0
+(py3Env)
+
+6-pip freeze : The pip freeze command is used to generate a list of installed packages along with their exact version numbers in a format that is commonly used for requirements files. 
+
+output:
+Django==2.2.4
+pytz==2024.1
+sqlparse==0.5.0
+(py3Env)
+
+7-pip freeze > requirements.txt: 
+The command pip freeze > requirements.txt is commonly used in Python development to generate a requirements.txt file that captures the exact state of installed packages (including their versions) in the current Python environment.
+
+ls requirements.txt
+requirements.txt
+
+8-pip uninstall django: Its a command used to uninstall django from the current enviroment
+
+Output: 
+Found existing installation: Django 2.2.4
+Uninstalling Django-2.2.4:
+  Would remove:
+    c:\users\yaser\desktop\dojo_assignments\python\my_environments\py3env\lib\site-packages\django-2.2.4.dist-info\*
+    c:\users\yaser\desktop\dojo_assignments\python\my_environments\py3env\lib\site-packages\django\*
+    c:\users\yaser\desktop\dojo_assignments\python\my_environments\py3env\scripts\django-admin.exe
+    c:\users\yaser\desktop\dojo_assignments\python\my_environments\py3env\scripts\django-admin.py
+Proceed (Y/n)? Y
+  Successfully uninstalled Django-2.2.4
+
+9-pip show Django:
+The pip show Django command is used to display detailed information about a specific Python package named Django. When you run this command, pip retrieves and displays metadata associated with the Django package installed in your current Python environment.
+
+Output: 
+WARNING: Package(s) not found: Django
+
+
