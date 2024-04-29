@@ -4,7 +4,7 @@ def randInt(min= None, max=None):
     if min==None and max == None:
         num=round(num*100)
     elif min==None and max!=None:
-        num=round(num*50)
+        num=round(num*max)
     elif min!=None and max==None:
         num=round(num*(100-min)+min)
     elif min!=None and max!=None:
