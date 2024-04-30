@@ -1,11 +1,10 @@
 
 def biggieList(list):
-    new_list=[]
     for i in range (len(list)):
         if list[i]>0:
             list [i]="big"
-        new_list.append(list[i])
-    return new_list
+    return list
+
 
 def positiveNumber(x):
     count=0
@@ -22,12 +21,10 @@ def sumList(y):
     return count
 
 def avgList(y):
-    count=0
     sum=0
     for i in range (len(y)):
-        count+=1
         sum+=y[i]
-    avg=sum/count
+    avg=sum/len(y)
     return avg
 
 def lengthList(x):
@@ -53,8 +50,12 @@ def dictList(list):
     return newDict
 
 def reverseList(list):
-    list[:]=list[::-1]
+    start=0
+    end=len(list)-1
+    while start<end:
+        list[start],list[end]=list[end],list[start]
+        start +=1
+        end -=1
     return list
 
-
-
+print(reverseList([1,2,3,4]))
