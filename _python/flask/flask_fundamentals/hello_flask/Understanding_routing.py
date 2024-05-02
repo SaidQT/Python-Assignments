@@ -17,6 +17,9 @@ def ask_name(name):
 def print_name(name, num):
    return '<br>'.join([name] * num)
 
+@app.route('/<path:path>')
+def error(path):
+    return "Sorry! No response. Try again."
 if __name__=="__main__":     
     app.run(debug=True)    
 
