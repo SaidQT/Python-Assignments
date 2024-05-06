@@ -1,8 +1,8 @@
 class User:
-    def __init__(self, name, email):
+    def __init__(self, name, email,balance):
         self.name = name
         self.email = email
-        self.accounts = {}  
+        self.accounts = BankAccount(balance)  
 
     def create_account(self, account_id, initial_balance=0):
         if account_id not in self.accounts:
@@ -35,8 +35,8 @@ class User:
             print(account.display_account_info())
 
 class BankAccount:
-    def __init__(self, account_id, balance=0):
-        self.account_id = account_id
+    def __init__(self, balance ):
+        # self.account_id = account_id
         self.balance = balance
         
     def deposit(self, amount):
@@ -49,3 +49,4 @@ class BankAccount:
     def display_account_info(self):
         return f"Account ID: {self.account_id}, Balance: {self.balance}"
 
+user1=User("saeed","saeed@gmail.com",3000)

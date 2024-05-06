@@ -5,7 +5,7 @@ students = [
 ]
 sports_directory = {
     'basketball' : ['Kobe', 'Jordan', 'James', 'Curry'],
-    'soccer' : ['Messi', 'Ronaldo', 'Rooney']
+    'soccer' : ['Messi', 'Ronaldo', 'Rooney'],
 }
 z = [ {'x': 10, 'y': 20} ]
 
@@ -25,7 +25,6 @@ students = [
 def iterateDictionary(list):
     for dictionary in list:
         pair= []
-        
         for key, value in dictionary.items():
             pair.append(f'{key} - {value}')
         
