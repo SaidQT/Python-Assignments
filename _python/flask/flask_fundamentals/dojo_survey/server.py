@@ -11,8 +11,7 @@ def index2():
     location=request.form['location']
     language=request.form['language']
     comment= request.form['message']
-    gender=request.form['gender']
-    return render_template("show.html", name=name,location=location,language=language,comment=comment,gender=gender)
+    return render_template("show.html", name=name,location=location,language=language,comment=comment)
 if __name__ == "__main__":
     app.run(debug=True)
 
