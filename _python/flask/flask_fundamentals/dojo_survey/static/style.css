@@ -1,6 +1,7 @@
 .button{
     background-color: wheat;
-    width: 80px;
+    width: 120px;
+    padding:10px;
 }
 body{
     border: 1px solid black;

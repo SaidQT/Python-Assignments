@@ -23,21 +23,22 @@
 <textarea name="message" rows="10" cols="30">
 </textarea>
 <p> Your Gender:
-<input type="radio" id="gender" name="gender" value="male">
-<label for="gender">Male</label>
-<input type="radio" id="gender" name="gender" value="female">
-<label for"gender">Female</label>
+    <input type="radio" id="gender1" name="gender" value="Male">
+    <label for="gender1">Male</label>
+    
+    <input type="radio" id="gender2" name="gender" value="Female">
+    <label for="gender2">Female</label>
 
 <p>What languages do you speak:</p><br><br>
-    <input type="checkbox" id="speak" name="speak" value="speak1">
-    <label for 'speak'>Arabic</label>
-    <input type="checkbox" id="speak" name="speak" value="speak2">
-    <label for 'speak'>Turkish</label>
-    <input type="checkbox" id="speak" name="speak" value="speak3">
-    <label for 'speak'>Spanish</label>
-    <input type="checkbox" id="speak" name="speak" value="speak4">
-    <label for 'speak'>English</label><br><br>
-<input class='button' type='submit' value='Button'>
+    <input type="checkbox" id="speak_arabic" name="speak[]" value="Arabic">
+    <label for 'speak_arabic'>Arabic</label>
+    <input type="checkbox" id="speak_turkish" name="speak[]" value="Turkish">
+    <label for 'speak_turkish'>Turkish</label>
+    <input type="checkbox" id="speak_spanish" name="speak[]" value="Spanish">
+    <label for 'speak_spanish'>Spanish</label>
+    <input type="checkbox" id="speak_english" name="speak[]" value="English">
+    <label for 'speak_english'>English</label><br><br>
+<input class='button' type='submit' value='Create user'>
 
 </form>
 </body>
