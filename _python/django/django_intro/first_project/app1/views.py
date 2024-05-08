@@ -23,5 +23,9 @@ def edit(request,number):
 def destroy (request,number):
     return redirect('/blogs')
 
-def hello(request):
-    return JsonResponse({"response": "JSON response from root", "status": True})
+def hello(request): 
+    dict=  {
+    "title":"My first blog",
+    "content":"lorem, ipsum as sawqe pas sa wq we q",
+}
+    return JsonResponse(dict)
