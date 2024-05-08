@@ -2,9 +2,6 @@ from flask import Flask, render_template, redirect ,session,request
 app = Flask(__name__)   
 app.secret_key='this is a secret'                
     
-    
-
-
 @app.route('/')                           
 def visit_times():
     if 'visits' and 'counter' in session:
@@ -14,7 +11,6 @@ def visit_times():
         session['visits'] = 1
         session['counter']=1
     return render_template('index.html',visits=session['visits'],counter=session['counter'])  
-
 
 @app.route('/2', methods=['POST'])
 def double_visit():
