@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Great number game</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        {%if session['counter']>5%}
+        <div class="incorrect">
+            <h3>You LOST!</h3>
+            <button><a href="/clear">Try again</a></button>
+        </div>
+        {%else%}
+        <h2>Welcome to great number game!</h2>
+        <p>I am thinking of a number between 1 and 100<br> take a guess!</p>
+        {%if session['message']=='Too high!'%}
+        <div class="wrong">
+            <p>Too high!</p>
+        </div>
+        {%elif session['message']=='Too low!'%}
+        <div class="wrong">
+            <p>Too low!</p>
+        </div>
+        {%endif%}
+        {% if not session['counter'] or session['message']=='Too high!' or session['message']=='Too low!'%}
+        <form action="/number" method="post">
+            <input type="number" name="random number" min=1 max=100><br>
+            <input type="submit" value="submit" class="button">
+        </form>
+        {%endif%}
+        {%if session['message']== 'Win'%}
+        <div class="correct">
+            <h3>You guessed it correctly!</h3>
+            <button><a href="/clear">Play again</a></button>
+        </div>
+        <p>It took you {{session['counter']}} tries to guess the correct number. Well played!</p>
+        <form action="/leaderboard" method="post">
+            <input type="text" name="player-name">
+            <button>Submit</button>
+        </form>
+        {%endif%}
+        {%endif%}
+
+    </div>
+
+    <script type="text/js" src="{{url_for('static', filename='main.js')}}"></script>
+</body>
+
+</html>

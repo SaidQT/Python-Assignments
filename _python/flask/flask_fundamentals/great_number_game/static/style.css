@@ -1,0 +1,71 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: cursive;
+}
+.container{
+    text-align: center;
+    margin-top: 200px;
+}
+form{
+    margin-top: 20px;
+}
+.button{
+    margin-top: 20px;
+}
+p{
+    margin-top:20px;
+}
+.wrong{
+    width:160px;
+    height:160px;
+    padding: 20px;
+    background-color: #cf2a27;
+    color: white;
+    font-size: 40px;
+    margin: 0 auto;
+    margin-top:20px;
+    border: 2px black solid;
+    box-shadow: 4px 4px 4px black;
+}
+
+.correct{
+    width:250px;
+    height:250px;
+    padding: 20px;
+    background-color: #009e0f;
+    color: white;
+    font-size: 35px;
+    margin: 0 auto;
+    margin-top:20px;
+    border: 2px black solid;
+    box-shadow: 4px 4px 4px black;
+}
+
+.correct button{
+    padding:10px;
+    border-radius: 20px;
+    background-color: darkblue;
+    margin-top: 40px;
+}
+.correct button a{
+    color:white;
+    text-decoration: none;
+}
+
+.incorrect{
+    padding: 20px;
+    color: white;
+    font-size: 35px;
+    margin: 0 auto;
+    margin-top:20px;
+    border: 2px black solid;
+    background-image: url("https://todaysparent.mblycdn.com/tp/resized/2011/08/1600x900/SoreLosers.jpg") ;
+    background-size: cover;
+    border: solid 3px #000;
+    height: 400px;
+    width: 500px;
+}
+.incorrect button{
+    margin-top: 200px;
+}
