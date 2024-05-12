@@ -1,0 +1,31 @@
+body{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    margin-top: 100px;
+}
+p{
+    text-align: center;
+    font-weight: bold;
+}
+.button{
+    background-color: black;
+    width: 70px;
+    padding: 5px;
+    color: white;
+}
+.button2{
+    margin-top: 10px;
+    background-color: black;
+    width: 70px;
+    padding: 5px;
+    color: white;
+}
+#quantity{
+    margin-top: 10px;
+}
+#submit{
+    margin-top: 10px;
+}
