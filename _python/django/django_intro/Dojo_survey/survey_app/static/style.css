@@ -1,0 +1,13 @@
+.button{
+    background-color: wheat;
+    width: 120px;
+    padding:10px;
+}
+body{
+    border: 1px solid black;
+    text-align: center;
+    width:400px;
+}
+p{
+    font-weight: bold;
+}

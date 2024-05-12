@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <form action='/result' method='post'>
+    {% csrf_token %}
+    <p>Your Name: <input type='text' name='x' required></p>
+    <p>Dojo Location:  <select id="location" name="location" required>
+        <option value='ramallah'>Ramallah</option>
+        <option value='qalqilia'>Qalqilia</option>
+    </select>
+</p>
+    <p>Favorite Language: <select id="language" name="language" required>
+        <option value='arabic'>Arabic</option>
+        <option value='english'>English</option>
+        <option value='spanish'>Spanish</option>
+        <option value='turkist'>Turkish</option>
+    </select>
+</p>
+<p> Comment (optional):</p>
+<textarea name="message" rows="10" cols="30">
+</textarea>
+<p> Your Gender:
+    <input type="radio" id="gender1" name="gender" value="Male">
+    <label for="gender1">Male</label>
+    
+    <input type="radio" id="gender2" name="gender" value="Female">
+    <label for="gender2">Female</label>
+
+<p>What languages do you speak:</p><br><br>
+    <input type="checkbox" id="speak_arabic" name="speak" value="Arabic">
+    <label for 'speak_arabic'>Arabic</label>
+    <input type="checkbox" id="speak_turkish" name="speak" value="Turkish">
+    <label for 'speak_turkish'>Turkish</label>
+    <input type="checkbox" id="speak_spanish" name="speak" value="Spanish">
+    <label for 'speak_spanish'>Spanish</label>
+    <input type="checkbox" id="speak_english" name="speak" value="English">
+    <label for 'speak_english'>English</label><br><br>
+<input class='button' type='submit' value='Create user'>
+
+</form>
+</body>
+</html>

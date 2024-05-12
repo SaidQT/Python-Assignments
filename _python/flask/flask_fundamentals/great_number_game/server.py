@@ -34,12 +34,8 @@ def leader():
 
 @app.route("/winners")
 def showleaderboard():
-    return render_template: ('show.html')    
-    
-           
-           
-           
-           
+    return render_template('show.html')    
+
 if __name__=="__main__":    
     app.run(debug=True)    
 
