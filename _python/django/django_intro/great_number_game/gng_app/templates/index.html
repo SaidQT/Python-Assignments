@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">  
+
+    <title>Great number game</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        {%if request.session.counter > 5%}
+        <div class="incorrect">
+            <h3>You LOST!</h3>
+            <button><a href="/clear">Try again</a></button>
+        </div>
+        {%else%}
+        <h2>Welcome to great number game!</h2>
+        <p>I am thinking of a number between 1 and 100<br> take a guess!</p>
+        {%if request.session.message == 'Too high!'%}
+        <div class="wrong">
+            <p>Too high!</p>
+        </div>
+        {%elif request.session.message == 'Too low!'%}
+        <div class="wrong">
+            <p>Too low!</p>
+        </div>
+        {%endif%}
+        {% if not request.session.counter or  request.session.message == 'Too high!' or  request.session.message == 'Too low!'%}
+        <form action="/number" method="post">
+            {% csrf_token %}
+            <input type="number" name="random number" min=1 max=100><br>
+            <input type="submit" value="submit" class="button">
+        </form>
+        {%endif%}
+        {%if request.session.message == 'Win'%}
+        <div class="correct">
+            <h3>You guessed it correctly!</h3>
+            <button><a href="/clear">Play again</a></button>
+        </div>
+        <p>It took you {{request.session.counter}} tries to guess the correct number. Well played!</p>
+        
+        {%endif%}
+        {%endif%}
+
+    </div>
+
+</body>
+
+</html>
