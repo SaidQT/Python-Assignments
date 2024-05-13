@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding: 30px;
+    font-family: fantasy;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+
+.box{
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    background-color: #A16BFE;
+    color: white;
+    height: 150px;
+    width: 200px;
+}
+
+#play{
+    padding: 5px;
+    box-shadow: 2px 2px 2px black;
+    margin-top: 50px;
+}
+.total{
+    border: 1px solid black;
+    padding:3px;
+    text-align: center;
+    color: goldenrod;
+    margin-left: 10px;
+}
+button a{
+    text-decoration: none;
+    color: black;
+}
+.activity{
+    height: 200px;
+    border: 1px solid black;
+    overflow: scroll;
+    margin-top: 10px;
+}
+
+.para{
+    margin-top: 100px;
+}
+
+.activity p{
+    color: green;
+}

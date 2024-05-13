@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">   
+</head>
+<body>
+    <h2>Your Gold:<span class="total"> {{request.session.gold}}</span></h2>
+    <div class="container">
+        <div class="box">
+            <h2>Farm</h2>
+            <p>(earns 10-20 gold)</p>
+            <form action="/process_money" method="post">
+                {%csrf_token%}
+                <input type="hidden" name="game" value="farm">
+                <input type="submit" value="Find Gold!" id="play">
+            </form>
+        </div>
+        <div class="box">
+            <h2>Cave</h2>
+            <p>(earns 10-20 gold)</p>
+            <form action="/process_money" method="post">
+                {%csrf_token%}
+                <input type="hidden" name="game" value="cave">
+                <input type="submit" value="Find Gold!" id="play">
+            </form>
+        </div>
+        <div class="box">
+            <h2>House</h2>
+            <p>(earns 10-20 gold)</p>
+            <form action="/process_money" method="post">
+                {%csrf_token%}
+                <input type="hidden" name="game" value="house">
+                <input type="submit" value="Find Gold!" id="play">
+            </form>
+        </div>
+        <div class="box">
+            <h2>Quest</h2>
+            <p>(earns 0-50 gold)</p>
+            <form action="/process_money" method="post">
+                {%csrf_token%}
+                <input type="hidden" name="game" value="quest">
+                <input type="submit" value="Find Gold!" id="play">
+            </form>
+        </div>
+    </div>
+    <p class="para">Activities:</p>
+    <div class="activity">
+        {% for value in request.session.results %}
+            <p>{{ value }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
