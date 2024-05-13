@@ -8,8 +8,10 @@ class Bankaccount:
         return self
     
     def withdrawal (self,amount):
-        if self.balance>amount:
+        if self.balance>=amount:
             self.balance-=amount
+        if self.balance<amount:
+            print("Balance is low!")
         return self
     
     def display_account_info (self):
@@ -23,8 +25,11 @@ class Bankaccount:
 
 theFrog=Bankaccount()
 user2= Bankaccount()
-
-theFrog.deposit(100).deposit(200).deposit(300).withdrawal(150).yield_interest().display_account_info()
-user2.deposit(1000).deposit(2000).withdrawal(300).withdrawal(200).withdrawal(100).withdrawal(50).yield_interest().display_account_info()
+Saeed=Bankaccount(1000)
+Saeed.display_account_info()
+saeed2=Bankaccount(int_rate=0.04)
+saeed2.display_account_info()
+# theFrog.deposit(100).deposit(200).deposit(300).withdrawal(150).yield_interest().display_account_info()
+# user2.deposit(1000).deposit(2000).withdrawal(300).withdrawal(200).withdrawal(100).withdrawal(50).yield_interest().display_account_info()
 
 

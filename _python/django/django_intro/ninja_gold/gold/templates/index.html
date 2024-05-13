@@ -49,8 +49,8 @@
     </div>
     <p class="para">Activities:</p>
     <div class="activity">
-        {% for value in request.session.results %}
-            <p>{{ value }}</p>
+        {% for i in request.session.results %}
+            <p>{{ i }}</p>
         {% endfor %}
     </div>
 </body>

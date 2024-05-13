@@ -3,13 +3,13 @@ import random
 from time import localtime, strftime
     
 def index(request):
+    if 'gold' not in request.session:
+        request.session['gold']=0
     return render(request,"index.html")
 def play(request):
     if 'results' not in request.session:
         request.session['results']=[]
     if request.method=="POST":
-        if 'gold' not in request.session:
-            request.session['gold']=0
         if request.POST['game'] == 'cave':
             request.session['random_num']=random.randint(10,20)
             request.session['results'].append(f"You entered a cave and earned {request.session['random_num']}. {strftime("%Y-%m-%d %H:%M %p", localtime())}")
