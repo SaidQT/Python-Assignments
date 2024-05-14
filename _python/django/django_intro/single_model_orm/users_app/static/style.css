@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+body{
+    padding: 30px;
+}
+#email{
+    margin-left: 33px;
+}
+#age{
+    margin-left: 43px;
+}
+.sec2{
+    margin-top: 40px;
+}
+table, th, td {
+    border: 1px solid;
+    margin-bottom: 200px;
+    
+}
+
+button{
+    text-align: center;
+    box-shadow: 1px 1px 1px black;
+    padding:5px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+th, td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+th{
+    background-color:burlywood;
+    color:white;
+
+}
