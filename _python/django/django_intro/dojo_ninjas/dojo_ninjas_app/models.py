@@ -7,6 +7,6 @@ class Dojo(models.Model):
     desc=models.TextField(null=True)
 
 class Ninja(models.Model):
-    dojo_id=models.ForeignKey(Dojo,related_name='dojos', on_delete=models.CASCADE)
+    dojo_id=models.ForeignKey(Dojo,related_name='ninjas', on_delete=models.CASCADE)
     first_name=models.CharField(max_length=255)
     last_name=models.CharField(max_length=255)

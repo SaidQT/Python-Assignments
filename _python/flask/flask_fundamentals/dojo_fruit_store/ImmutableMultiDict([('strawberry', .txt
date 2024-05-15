@@ -1,0 +1,6 @@
+ImmutableMultiDict([('strawberry', '4'), ('raspberry', '2'), ('apple', '4'), ('first_name', 'Said'), ('last_name', 'Abu Qtaish'), ('student_id', '')])
+127.0.0.1 - - [07/May/2024 15:29:52] "POST /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2024 15:29:52] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+
+
+when i refreshed the page I've noticed that the terminal prints out the dictionary items with their values, and i also noticed that there are two actions which are POST and GET.  
