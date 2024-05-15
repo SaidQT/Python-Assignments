@@ -41,10 +41,11 @@
     <hr>
     <div class="sec2">
         {% for dojo in dojos%}
-            <h1>Ninjas with Dojo {{dojo.name}}</h1>
+            <h1>Ninjas with Dojo {{dojo.name}}<span id="count">Count of ninjas: {{dojo.ninjas.all|length}}</span></h1>
             {% for ninja in dojo.ninjas.all %}
                 <p>{{ninja.first_name}} {{ninja.last_name}}</p>
             {%endfor%}
+            <a href="/delete/{{dojo.id}}"><button class="delete">Delete</button></a>
         {%endfor%}
     </div>
 </body>

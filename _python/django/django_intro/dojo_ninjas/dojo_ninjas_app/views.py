@@ -21,3 +21,9 @@ def post2(request):
     Ninja.objects.create(dojo_id=dojo,first_name=name,last_name=lname)
     
     return redirect('/')
+
+def delete(request,z):
+    deleted_item= Dojo.objects.get(id=z)
+    deleted_item.delete()
+    return redirect('/')
+    
