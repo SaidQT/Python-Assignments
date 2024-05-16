@@ -51,10 +51,10 @@ def show_author(request,z):
     author_x=Author.objects.get(id=z)
     data2={
         "id":author_x.id,
-        "first name":author_x.first_name,
-        "last name":author_x.last_name,
+        "first_name":author_x.first_name,
+        "last_name":author_x.last_name,
         "notes":author_x.notes,
-        "books":Book.objects.all(),
-        "author_books":Author.books.all(),
+        "author_books":author_x.books.all(),
+        "Books":Book.objects.all()
     }
     return render(request,"showauthor.html",data2)

@@ -8,13 +8,21 @@
     <link rel="stylesheet" href="{% static 'style2.css' %}">    
 </head>
 <body>
-    <h1>{{first name}} {{last name}}</h1>
+    <h1>{{first_name}} {{last_name}}</h1>
     <p>ID: {{id}}<p>
     <p>Notes:  {{notes}}</p>
-    <p>Authors:</p>
+    <p>Books:</p>
     {%for book in author_books%}
         <ul>{{book.title}}</ul>
     {%endfor%}
-
+    <form action="/process3/{{id}}" method="post">
+        {% csrf_token %}
+        <select name="books" id="books">
+            {%for book in Books%}
+                <option value="{{book.id}}">{{book.title}}</option>
+            {%endfor%}
+            <input type="submit" value="Add" class="button">
+        </select>
+    </form> 
 </body>
 </html>
