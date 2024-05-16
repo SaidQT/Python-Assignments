@@ -50,11 +50,20 @@ def create_author(request):
 def show_author(request,z):
     author_x=Author.objects.get(id=z)
     data2={
-        "id":author_x.id,
+        "author_id":author_x.id,
         "first_name":author_x.first_name,
         "last_name":author_x.last_name,
         "notes":author_x.notes,
         "author_books":author_x.books.all(),
-        "Books":Book.objects.all()
+        "books":Book.objects.all()
     }
     return render(request,"showauthor.html",data2)
+
+def add_book(request,z):
+    author_y=Author.objects.get(id=z)
+    if request.method=='POST':
+        y=request.POST['books']
+    book_y=Book.objects.get(id=y)
+    author_y.books.add(book_y)
+    return redirect(f'/authors/{z}')
+    

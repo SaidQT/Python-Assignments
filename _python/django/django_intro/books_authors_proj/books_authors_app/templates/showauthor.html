@@ -9,20 +9,20 @@
 </head>
 <body>
     <h1>{{first_name}} {{last_name}}</h1>
-    <p>ID: {{id}}<p>
+    <p>ID: {{author_id}}<p>
     <p>Notes:  {{notes}}</p>
     <p>Books:</p>
     {%for book in author_books%}
         <ul>{{book.title}}</ul>
     {%endfor%}
-    <form action="/process3/{{id}}" method="post">
+    <form action="/process4/{{author_id}}" method="post">
         {% csrf_token %}
-        <select name="books" id="books">
-            {%for book in Books%}
+        <select name="books" id="bookie">
+            {%for book in books%}
                 <option value="{{book.id}}">{{book.title}}</option>
             {%endfor%}
             <input type="submit" value="Add" class="button">
         </select>
-    </form> 
+    </form>
 </body>
 </html>

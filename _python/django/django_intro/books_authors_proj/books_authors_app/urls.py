@@ -10,4 +10,5 @@ urlpatterns = [
     path('authors', views.authors),
     path('process3',views.create_author),
     path('authors/<int:z>', views.show_author),
+    path('process4/<int:z>', views.add_book),
     ]
