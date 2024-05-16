@@ -22,6 +22,7 @@ def show_book(request,id):
         "book_authors":book_x.authors.all(),
         "book_id":book_x.id,
         "authors":Author.objects.all(),
+        "not_author":Author.objects.exclude(books=book_x),
     }
     return render(request,"book.html", data)
 
@@ -55,7 +56,8 @@ def show_author(request,z):
         "last_name":author_x.last_name,
         "notes":author_x.notes,
         "author_books":author_x.books.all(),
-        "books":Book.objects.all()
+        "books":Book.objects.all(),
+        "not_books":Book.objects.exclude(authors=author_x)
     }
     return render(request,"showauthor.html",data2)
 

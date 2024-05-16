@@ -18,7 +18,7 @@
     <form action="/process4/{{author_id}}" method="post">
         {% csrf_token %}
         <select name="books" id="bookie">
-            {%for book in books%}
+            {%for book in not_books%}
                 <option value="{{book.id}}">{{book.title}}</option>
             {%endfor%}
             <input type="submit" value="Add" class="button">
