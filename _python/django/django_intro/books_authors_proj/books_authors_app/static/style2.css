@@ -1,0 +1,13 @@
+
+body{
+    padding: 50px;
+}
+#authors{
+    height:40px;
+    padding: 5px;
+}
+.button{
+    padding: 3px;
+    margin-left: 10px;
+    width: 80px;
+}

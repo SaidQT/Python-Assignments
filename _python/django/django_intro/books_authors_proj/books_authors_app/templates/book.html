@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book details</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'style2.css' %}">    
+</head>
+<body>
+    <h1>{{book_title}}</h1>
+    <p>ID: {{book_id}}<p>
+    <p>Description:  {{book_desc}}</p>
+    <p>Authors:</p>
+    {%for author in book_authors%}
+        <ul>{{author.first_name}} {{author.last_name}}</ul>
+    {%endfor%}
+    <form action="/process2/{{book_id}}" method="post">
+        {% csrf_token %}
+        <select name="authors" id="authors">
+            {%for author in authors%}
+                <option value="{{author.id}}">{{author.first_name}} {{author.last_name}}</option>
+            {%endfor%}
+            <input type="submit" value="Add" class="button">
+        </select>
+    </form>
+</body>
+</html>

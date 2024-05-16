@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book details</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'style2.css' %}">    
+</head>
+<body>
+    <h1>{{first name}} {{last name}}</h1>
+    <p>ID: {{id}}<p>
+    <p>Notes:  {{notes}}</p>
+    <p>Authors:</p>
+    {%for book in author_books%}
+        <ul>{{book.title}}</ul>
+    {%endfor%}
+
+</body>
+</html>
