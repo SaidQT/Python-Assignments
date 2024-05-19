@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies and actors</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+    <script src="{%static 'main.js'%}"></script>
+</head>
+<body>
+    <img src="https://img.freepik.com/free-vector/cinema-realistic-poster-with-illuminated-bucket-popcorn-drink-3d-glasses-reel-tickets-blue-background-with-tapes-vector-illustration_1284-77070.jpg" alt="movie-time" class="intro-img">
+    <h1>Movies list</h1>
+    <div class="container">
+        {%for movie in Movie%}
+            <div class="card">
+                <img src={{movie.url_image}} alt="movie images">
+                <p>Actor:      {% for actor in movie.Actors.all %}
+                    {{ actor.name }}
+                {% endfor %}
+                    
+                </p>
+                <p>Director: {{movie.Director.name}}</p>
+                <p>Category: {{movie.Category.name}}</p>
+                <p class="more-info">{{movie.Description}}</p>
+            </div>
+        {%endfor%}
+    </div>
+    <table>
+        <tr>
+            <th>Movie</th>
+            <th>Actor</th>
+            <th>Director</th>
+            <th>Category</th>
+        </tr>
+        {%for i in Movie%}
+            <tr>
+                <td>{{i.Title}}</td>
+                <td>     {% for actor in i.Actors.all %}
+                    {{ actor.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </td>
+                <td>{{i.Director.name}}</td>
+                <td>{{i.Category.name}}</td>
+            </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

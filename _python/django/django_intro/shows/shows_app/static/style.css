@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    padding:40px;
+}
+table{
+    width:100%;
+    margin-top:20px;
+    margin-bottom: 40px;
+}
+table tr, th{
+    background-color: darkgray;
+}
+table tr,th,td{
+    padding: 10px 2px;
+    color: black;
+    letter-spacing: 1.5px;
+    word-spacing: 2px;
+    text-align: center;
+    border: 1px black solid;
+}
+table tr,td{
+    background-color: white;
+}

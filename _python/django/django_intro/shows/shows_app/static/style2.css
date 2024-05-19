@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    text-align: right;
+}
+h1{
+    text-align: center;
+}
+form{
+    margin-top: 100px;
+    text-align: center;
+    font-size: small
+}
+textarea{
+    width: 400px;
+    height:100px;
+}
+label{
+    display: block;
+}
+.part2{
+    display: flex;
+    justify-content: center;
+}
+input{
+    padding:5px;
+    margin: 5px;
+}
+label{
+    margin:5px;
+    margin-left: 40px;
+}
+button{
+    padding: 10px;
+    width: 80px;
+}
