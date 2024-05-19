@@ -28,6 +28,14 @@
         </div>
         <button type="submit">Update</button>
     </form>       
+    {% if messages %}
+        <ul class="messages">    
+    {% for message in messages %}    
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+        </ul>
+    {% endif %}
     <a class="link" href="/shows/{{show.id}}">Go to Show!</a>
+
 </body>
 </html>

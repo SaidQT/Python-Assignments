@@ -43,3 +43,10 @@ button{
     width: fit-content;
     margin-top: 40px;
 }
+.messages{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    
+}
