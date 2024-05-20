@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'style2.css' %}"> 
+</head>
+<body>
+    <div class="header">
+        <h2>Coding Dojo wall</h2>
+        <div class="headersec">
+            <p>Welcome {{user.first_name}}!</p>
+            <a href='/delete'>logoff</a>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <p>Post a message:</p>
+        <form action="/message/{{user.id}}" method="post">
+            {%csrf_token%}
+            <textarea name="message" ></textarea>
+            <input type="submit" value="Post a message">
+        </form>
+        {%for message in messages%}
+            <h5>{{message.users.first_name}}-{{message.created_at}}</h5>
+            <p>{{message.message}}</p>
+            {%for comment in message.comments.all%}
+                <h5>{{comment.users.first_name}}-{{comment.created_at}}</h5>
+                <p>{{comment.comment}}</p>
+                <button><a href="/delete/{{comment.id}}">Delete comment</a></button>
+            {%endfor%}
+            <form action="/comment/{{user.id}}/{{message.id}}" method="post">
+                {%csrf_token%}
+                <textarea name="comment" class="comment"></textarea>
+                <input type="submit" value="Post a comment">
+            </form>
+        {%endfor%}
+    </div>
+</body>
+
+</html>

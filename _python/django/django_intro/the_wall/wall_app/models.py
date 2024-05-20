@@ -29,3 +29,18 @@ class User(models.Model):
     updated_at=models.DateTimeField(auto_now=True)
     objects=UserManager()
     
+class Message(models.Model):
+    users=models.ForeignKey(User, related_name="messages", on_delete=models.CASCADE)
+    message=models.TextField()
+    time=models.TimeField(auto_now_add=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now=True)
+    
+    
+class Comment(models.Model):
+    users=models.ForeignKey(User, related_name="comments", on_delete=models.CASCADE)
+    messages=models.ForeignKey(Message,related_name="comments",on_delete=models.CASCADE)
+    comment=models.TextField()
+    time=models.TimeField(auto_now_add=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now=True)
