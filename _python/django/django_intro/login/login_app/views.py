@@ -3,6 +3,10 @@ from django.contrib import messages
 from .models import User
 import bcrypt
 
+#Description:  This function will do .....
+# Inputs:
+#Outputs
+#Developer: 
 def index(request):
     return render(request,'index.html')
 
@@ -28,7 +32,8 @@ def create(request):
     return redirect('/success')
 
 def login(request):
-    email = User.objects.filter(email=request.POST['email']) 
+    if request.method == "POST":
+        email = User.objects.filter(email=request.POST['email']) 
     if email: 
         logged_email = email[0] 
         if bcrypt.checkpw(request.POST['password'].encode(), logged_email.password.encode()):

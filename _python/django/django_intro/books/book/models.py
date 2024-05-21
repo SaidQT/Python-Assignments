@@ -1,3 +1,4 @@
+
 from django.db import models
 import re
 
@@ -19,6 +20,14 @@ class UserManager(models.Manager):
             errors['password']="Passwords don't match"
         return errors
     
+class BookManager(models.Manager):
+    def basic_validator(self, postData):
+        errors={}
+        if not postData['title']:
+            errors["title"] = "Title is required"
+        if len(postData['desc']) <5:
+            errors["desc"] = "Description is required"
+        return errors
     
 class User(models.Model):
     first_name=models.CharField(max_length=45)
@@ -28,5 +37,12 @@ class User(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
     objects=UserManager()
-
-
+    
+class Book(models.Model):
+    title=models.CharField(max_length=45)
+    desc=models.TextField()
+    favorites=models.ManyToManyField(User,related_name='book_favorites')
+    created_at=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now=True)
+    uploaded_by=models.ForeignKey(User,related_name='books',on_delete=models.CASCADE)
+    objects=BookManager()

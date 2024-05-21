@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book details</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'style3.css' %}"> 
+</head>
+<body>
+    <div class="header">
+        <h2>Welcome {{user.first_name}}</h2>
+        <a href="/delete">Logout</a>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="sec1">
+            <form action="/edit/{{book_y.id}}" method="post">
+                {%csrf_token%}
+                <p>Added by: {{book_y.uploaded_by.first_name}} {{book_y.uploaded_by.last_name}}</p>
+                <input type="text" name="name" value="{{book_y.title}}">
+                <p>Added on: {{book_y.created_at}}</p>
+                <p>Last updated on: {{book_y.updated_at}}</p>
+                <textarea name="description" value="{{book_y.desc}}">{{book_y.desc}}</textarea><br>
+                <div class="buttons">
+                    <input type="submit" value="Update">
+            </form>
+                    <button><a href='/del/{{book_y.id}}'>Delete</a></button>
+                </div>
+        </div>
+        <div class="sec2">
+            <h3>Users who liked this book:</h3>
+            <ul>
+                {%for user in book_y.favorites.all%}
+                    <li>{{user.first_name}} {{user.last_name}}</li>
+                    {%if user != book_y.uploaded_by%}
+                        <a href="/unfav/{{book_y.id}}/{{user.id}}">Unfavorite</a>
+                    {%endif%}
+                    
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
