@@ -23,7 +23,7 @@
             <textarea name="message" ></textarea>
             <input type="submit" value="Post a message">
         </form>
-        {%for message in messages%}
+        {%for message in message%}
             <h5>{{message.users.first_name}}-{{message.created_at}}</h5>
             <p>{{message.message}}</p>
             {%for comment in message.comments.all%}

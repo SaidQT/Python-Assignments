@@ -25,7 +25,7 @@ def create(request):
                 password=pw_hash
                 )
             request.session['userid'] = user.id
-    return redirect('/success')
+    return redirect('/wall')
 
 def login(request):
     email = User.objects.filter(email=request.POST['email']) 
@@ -33,17 +33,17 @@ def login(request):
         logged_email = email[0] 
         if bcrypt.checkpw(request.POST['password'].encode(), logged_email.password.encode()):
             request.session['userid'] = logged_email.id
-            return redirect('/success')
+            return redirect('/wall')
     messages.error(request, "The password or email you entered is incorrect",extra_tags="login")
     return redirect("/")
 
 def success(request):
     if "userid" not in request.session:
         return redirect("/")
-    data={"user":User.objects.get(id=request.session['userid']),
-                "messages":Message.objects.all(),
-                "comments":Comment.objects.all(),
-}
+    data=   { "user":User.objects.get(id=request.session['userid']),
+            "message":Message.objects.all().order_by("-created_at"),
+    }
+        
     return render(request,'success.html',data)
 
 def delete(request):
@@ -54,17 +54,18 @@ def message(request,id):
     user_1=User.objects.get(id=id)
     Message.objects.create(users=user_1,
                     message=request.POST['message'])
-    return redirect('/success')
+    return redirect('/wall')
 
 
 def comment(request,z,y):
     msg_x=Message.objects.get(id=y)
     user_x=User.objects.get(id=z)
     Comment.objects.create(users=user_x,messages=msg_x,comment=request.POST['comment'])
-    return redirect('/success')
+    comments=msg_x.comments.all().order_by("-created_at")
+    return redirect('/wall')
 
 def delete_comment(request,x):
     comment_x=Comment.objects.get(id=x)
     comment_x.delete()
-    return redirect('/success')
+    return redirect('/wall')
     
